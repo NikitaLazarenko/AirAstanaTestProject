@@ -1,16 +1,10 @@
 package AirAstana.config;
 
-import AirAstana.config.BaseSettings;
 import AirAstana.pages.AcceptCookies;
 import AirAstana.pages.AirAstanaMainPage;
-import AirAstana.pages.MainPage;
+import AirAstana.pages.LangChange;
 
 public class Adm extends BaseSettings {
-
-    public MainPage mainPage() {
-        MainPage mainPage = new MainPage();
-        return mainPage;
-    }
 
     public AcceptCookies acceptCookies() {
         AcceptCookies acceptCookies = new AcceptCookies();
@@ -20,5 +14,10 @@ public class Adm extends BaseSettings {
     public AirAstanaMainPage airAstanaMainPage() {
         AirAstanaMainPage airAstanaMainPage = new AirAstanaMainPage();
         return airAstanaMainPage;
+    }
+
+    public LangChange langChange() {
+        LangChange langChange = new LangChange();
+        return langChange;
     }
 }

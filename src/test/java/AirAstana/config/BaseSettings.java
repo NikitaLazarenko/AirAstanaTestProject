@@ -54,7 +54,6 @@ public class BaseSettings {
         pageurl= webdriver().driver().url();
         info("URL последней страницы: "+pageurl);
         Selenide.clearBrowserCookies();
-
         Selenide.clearBrowserLocalStorage();
         Configuration.browserSize = "1300x1080";
 //        Selenide.closeWebDriver();
@@ -67,9 +66,9 @@ public class BaseSettings {
     static {
 
         Configuration.browser = "chrome"; //firefox, edge,opera, ie
-        Configuration.baseUrl = "https://airastana.com/kaz/ru-ru";
+        Configuration.baseUrl = "https://airastana.com/kaz/";
         Configuration.timeout= 10000;
-        Configuration.pageLoadTimeout=10000;
+        Configuration.pageLoadTimeout=20000;
         Configuration.browserSize = "1300x1080";
 
         Configuration.headless = false;
