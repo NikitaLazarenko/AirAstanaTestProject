@@ -2,6 +2,7 @@ package AirAstana.pages;
 
 import com.codeborne.selenide.*;
 import io.qameta.allure.Step;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WindowType;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
@@ -23,6 +24,7 @@ import static com.codeborne.selenide.Condition.not;
 public class TicketBooking {
     public void CheckBody() {
         DepartureFromAndTo();
+        Booking();
     }
 
     @Step("Выбор направления и даты вылета")
@@ -56,10 +58,15 @@ public class TicketBooking {
             SecondDate = $$("div.day.toMonth.valid");
         }
 
+
         $$(byId("main-booking-search-desktop-btn")).first().click();
         $$(byId("main-booking-search-desktop-btn")).first().click();
 
 //        Configuration.baseUrl = "https://bookings.airastana.com/";
+    }
+        @Step("Переход на bookings.airastana и выбор билетов")
+        public void Booking(){
+
         SelenideElement AirAstanaLogoForWait = $(byXpath("//img[@src='assets/img/web/logo.svg']"));
 
         SelenideElement TableCase = $(byText("Выберите дату и цену"));
@@ -81,18 +88,11 @@ public class TicketBooking {
         }
         TicketButtonFlightFromAstana.click();
 
-
-//        if (TableCase.is(visible)) {
-//            ContinueButtonInCaseWithTable.click();
-//        }
-
-
-
-//            TicketButtonFlightFromAstana.click();
-//            TableCase = $(byText("Выберите дату и цену"));
-//            ContinueButtonInCaseWithTable = $(byXpath("//*[@id=\"scroll\"]/main/vex-flex-calendar/div/div[2]/div[2]/button"));
-//            TicketButtonFlightFromAstana = $(byXpath("//*[@id=\"mat-expansion-panel-header-0\"]"));
-
+        $(By.xpath("//*[@id=\"cdk-accordion-child-0\"]/div/vex-details-header/div/div/div/vex-flights-rates/div/carousel/div[1]/div/div[1]/mat-card/mat-card-actions/button")).click();
+        $(byXpath("//*[@id=\"mat-expansion-panel-header-6\"]")).click();
+        $(byXpath("//*[@id=\"cdk-accordion-child-6\"]/div/vex-details-header/div/div/div/vex-flights-rates/div/carousel/div/div/div[1]/mat-card/mat-card-actions/button")).click();
+        $$(byXpath("//*[@id=\"scrollMe\"]/div/button")).first().click();
+        $(byClassName("headline-XL")).shouldBe(visible);
     }
 }
 
