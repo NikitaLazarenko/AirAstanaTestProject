@@ -3,6 +3,7 @@ package AirAstana.config;
 import AirAstana.pages.AcceptCookies;
 import AirAstana.pages.AirAstanaMainPage;
 import AirAstana.pages.LangChange;
+import AirAstana.pages.TicketBooking;
 
 public class Adm extends BaseSettings {
 
@@ -19,5 +20,10 @@ public class Adm extends BaseSettings {
     public LangChange langChange() {
         LangChange langChange = new LangChange();
         return langChange;
+    }
+
+    public TicketBooking ticketBooking() {
+        TicketBooking ticketBooking = new TicketBooking();
+        return ticketBooking;
     }
 }

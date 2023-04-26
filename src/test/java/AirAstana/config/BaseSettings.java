@@ -56,7 +56,7 @@ public class BaseSettings {
         Selenide.clearBrowserCookies();
         Selenide.clearBrowserLocalStorage();
         Configuration.browserSize = "1300x1080";
-//        Selenide.closeWebDriver();
+        Selenide.closeWebDriver();
 
     }
 
@@ -67,7 +67,7 @@ public class BaseSettings {
 
         Configuration.browser = "chrome"; //firefox, edge,opera, ie
         Configuration.baseUrl = "https://airastana.com/kaz/";
-        Configuration.timeout= 10000;
+        Configuration.timeout= 20000;
         Configuration.pageLoadTimeout=20000;
         Configuration.browserSize = "1300x1080";
 

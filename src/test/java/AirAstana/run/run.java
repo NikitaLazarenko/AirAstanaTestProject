@@ -37,4 +37,15 @@ public class run extends BaseSettings {
         adm.langChange().LangEN();
         Selenide.Wait().until(ExpectedConditions.urlContains("en-us"));
     }
+
+    @Test
+    @DisplayName("Бронирование билета")
+    public void ticketBooking(){
+        Adm adm = new Adm();
+        open("ru-ru/");
+        adm.acceptCookies().CheckBody();
+        adm.ticketBooking().CheckBody();
+    }
+
+
 }
